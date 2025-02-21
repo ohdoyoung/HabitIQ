@@ -16,6 +16,10 @@ struct HabitIQApp: App {
                     .tabItem {
                         Label("추천 받기", systemImage: "star")
                     }
+                HabitListView()
+                    .tabItem{
+                        Label("습관 리스트", systemImage: "slider.horizontal.3")
+                    }
             }
         }
     }

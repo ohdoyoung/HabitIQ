@@ -49,6 +49,7 @@ class HabitDataManager {
         
         do {
             try context.save()
+            scheduleHabitNotification(for: newHabit) // ✅ 알림 예약
             print("✅ 새로운 습관 저장 완료!")
         } catch {
             print("❌ 습관 저장 오류: \(error.localizedDescription)")
