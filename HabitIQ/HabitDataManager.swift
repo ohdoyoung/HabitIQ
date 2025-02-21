@@ -1,6 +1,8 @@
 import Foundation
 import CoreData
 import CoreML
+import UserNotifications
+
 
 // ✅ 카테고리 매핑 함수 추가
 func categoryToString(_ category: Int16) -> String {
@@ -39,6 +41,7 @@ class HabitDataManager {
         newHabit.category = Int16(category)
         newHabit.habitName = habitName // ✅ 습관 이름 추가
         newHabit.timeOfDay = Int16(Calendar.current.component(.hour, from: timeOfDay) * 60 + Calendar.current.component(.minute, from: timeOfDay)) // ✅ Date → 분(Int) 변환
+        newHabit.time = timeOfDay // ✅ 원본 시간 저장
         newHabit.frequency = Int16(frequency)
         newHabit.durationWeeks = Int16(durationWeeks)
         newHabit.completion = 0 // ✅ 처음 저장 시 completion은 0 (미완료 상태)
@@ -133,4 +136,40 @@ func getTrainingData() -> MLBatchProvider {
         featureArray.append(try! MLDictionaryFeatureProvider(dictionary: featureDict))
     }
     return MLArrayBatchProvider(array: featureArray)
+}
+
+func scheduleHabitNotification(for habit: HabitEntity) {
+    guard let habitTime = habit.time else { return }
+    let notificationCenter = UNUserNotificationCenter.current()
+    
+    let content = UNMutableNotificationContent()
+    content.title = "⏳ 습관 알림"
+    content.body = "\(habit.habitName) 시작할 시간이 다가와요! 준비되셨나요?"
+    content.sound = .default
+    
+    let calendar = Calendar.current
+    if let triggerTime = calendar.date(byAdding: .minute, value: -20, to: habitTime) {
+        let triggerComponents = calendar.dateComponents([.hour, .minute], from: triggerTime)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerComponents, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        notificationCenter.add(request) { error in
+            if let error = error {
+                print("❌ 알림 등록 오류: \(error.localizedDescription)")
+            } else {
+                print("✅ 알림이 성공적으로 예약되었습니다: \(habit.habitName)")
+            }
+        }
+    }
+}
+
+func requestNotificationPermission() {
+    let center = UNUserNotificationCenter.current()
+    center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        if let error = error {
+            print("❌ 알림 권한 요청 오류: \(error.localizedDescription)")
+        } else {
+            print(granted ? "✅ 알림 권한 허용됨" : "🚫 알림 권한 거부됨")
+        }
+    }
 }

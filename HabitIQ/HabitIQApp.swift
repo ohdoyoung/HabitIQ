@@ -2,6 +2,9 @@ import SwiftUI
 
 @main
 struct HabitIQApp: App {
+    init() {
+            requestNotificationPermission()
+        }
     var body: some Scene {
         WindowGroup {
             TabView {
