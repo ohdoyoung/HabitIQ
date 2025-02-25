@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1366468A2D6D4D5F0053C187 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136646892D6D4D5F0053C187 /* HabitViewModel.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		136646892D6D4D5F0053C187 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		13F80B2F2D644D87008E7947 /* HabitIQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitIQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +37,7 @@
 		13F80B262D644D87008E7947 = {
 			isa = PBXGroup;
 			children = (
+				136646892D6D4D5F0053C187 /* HabitViewModel.swift */,
 				13F80B312D644D87008E7947 /* HabitIQ */,
 				13F80B302D644D87008E7947 /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1366468A2D6D4D5F0053C187 /* HabitViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -56,6 +56,17 @@ class HabitDataManager {
         }
     }
     
+    func deleteHabit(_ habit: HabitEntity) {
+            let context = PersistenceController.shared.container.viewContext
+            context.delete(habit)
+            
+            do {
+                try context.save()
+            } catch {
+                print("삭제 중 오류 발생: \(error.localizedDescription)")
+            }
+        }
+    
     func fetchAllHabits() -> [HabitEntity] {
         let request: NSFetchRequest<HabitEntity> = HabitEntity.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
