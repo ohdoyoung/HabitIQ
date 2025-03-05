@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import WidgetKit
 // ✅ ViewModel 추가 (데이터 관리)
 class HabitViewModel: ObservableObject {
+    static let shared = HabitViewModel()
     @Published var habits: [HabitEntity] = []
 
     init() {
@@ -28,4 +30,5 @@ class HabitViewModel: ObservableObject {
         habitsToDelete.forEach { HabitDataManager.shared.deleteHabit($0) }
         fetchHabits() // ✅ 삭제 후 다시 로드하여 최신 데이터 유지
     }
+    
 }

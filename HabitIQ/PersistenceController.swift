@@ -15,10 +15,20 @@ class PersistenceController {
     
     init() {
         container = NSPersistentContainer(name: "HabitTrackerModel")
+        if let appGroupURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.habitiq.shared") {
+                  let storeURL = appGroupURL.appendingPathComponent("HabitIQ.sqlite")
+                  let storeDescription = NSPersistentStoreDescription(url: storeURL)
+                  container.persistentStoreDescriptions = [storeDescription]
+              }
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error {
                 fatalError("❌ Core Data 로드 실패: \(error)")
             }
         }
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
+    var viewContext: NSManagedObjectContext {
+           return container.viewContext
+       }
 }

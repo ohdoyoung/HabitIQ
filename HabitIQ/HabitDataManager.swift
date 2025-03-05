@@ -2,7 +2,7 @@ import Foundation
 import CoreData
 import CoreML
 import UserNotifications
-
+import WidgetKit
 
 // ✅ 카테고리 매핑 함수 추가
 func categoryToString(_ category: Int16) -> String {
@@ -50,6 +50,7 @@ class HabitDataManager {
         do {
             try context.save()
             scheduleHabitNotification(for: newHabit) // ✅ 알림 예약
+//            scheduleCompletionReminder(for: newHabit) // ✅ 완료 체크 알림 예약
             print("✅ 새로운 습관 저장 완료!")
         } catch {
             print("❌ 습관 저장 오류: \(error.localizedDescription)")
@@ -57,9 +58,12 @@ class HabitDataManager {
     }
     
     func deleteHabit(_ habit: HabitEntity) {
+            let habitIDString = habit.objectID.uriRepresentation().absoluteString // ✅ 해당 습관의 objectID 가져오기
+
             let context = PersistenceController.shared.container.viewContext
             context.delete(habit)
-            
+            removeNotification(for: habitIDString)
+
             do {
                 try context.save()
             } catch {
@@ -79,6 +83,17 @@ class HabitDataManager {
         }
     }
     
+    private func removeNotification(for habitID: String) {
+           let notificationCenter = UNUserNotificationCenter.current()
+           
+           notificationCenter.removePendingNotificationRequests(withIdentifiers: [habitID]) // ✅ 해당 습관 ID로 등록된 알림 삭제
+           notificationCenter.removeDeliveredNotifications(withIdentifiers: [habitID]) // ✅ 이미 전달된 알림도 삭제
+           
+           print("✅ 해당 습관의 알림 삭제됨: \(habitID)")
+       }
+    
+    
+    
     func toggleCompletion(for habit: HabitEntity) {
         habit.completion = habit.completion != 0 ? 0 : 1 // ✅ 완료 여부 토글 (0 → 1 또는 1 → 0)
         do {
@@ -88,6 +103,25 @@ class HabitDataManager {
             print("❌ 완료 상태 변경 오류: \(error.localizedDescription)")
         }
     }
+    
+    func markHabitAsCompleted(habitID: String) {
+           let request: NSFetchRequest<HabitEntity> = HabitEntity.fetchRequest()
+           request.predicate = NSPredicate(format: "SELF == %@", habitID)
+
+           do {
+               let habits = try context.fetch(request)
+               if let habit = habits.first {
+                   habit.completion = 1
+                   try context.save()
+                   print("✅ 습관 완료 처리됨: \(habit.habitName ?? "습관")")
+
+                   WidgetCenter.shared.reloadAllTimelines() // ✅ 위젯 강제 업데이트
+               }
+           } catch {
+               print("❌ 완료 상태 업데이트 오류: \(error.localizedDescription)")
+           }
+       }
+    
 }
 
 func getPersonalizedRecommendation(category: Int, timeOfDay: Int, frequency: Int, durationWeeks: Int, completion: Int) -> String? {
@@ -184,4 +218,10 @@ func requestNotificationPermission() {
             print(granted ? "✅ 알림 권한 허용됨" : "🚫 알림 권한 거부됨")
         }
     }
+    registerNotificationCategories() // ✅ 알림 카테고리 강제 등록
+
 }
+
+
+
+

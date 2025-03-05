@@ -7,23 +7,97 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1366468A2D6D4D5F0053C187 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136646892D6D4D5F0053C187 /* HabitViewModel.swift */; };
+		130B86E72D77D3EB0010B00C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132C05102D6FF6B2004828B5 /* WidgetKit.framework */; };
+		130B86E82D77D3EB0010B00C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132C05122D6FF6B2004828B5 /* SwiftUI.framework */; };
+		130B86F92D77D3EC0010B00C /* HabitWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 130B86E62D77D3EB0010B00C /* HabitWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		130B86F72D77D3EC0010B00C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13F80B272D644D87008E7947 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 130B86E52D77D3EB0010B00C;
+			remoteInfo = HabitWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		132C05292D6FF6B3004828B5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				130B86F92D77D3EC0010B00C /* HabitWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		136646892D6D4D5F0053C187 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
+		130B86E62D77D3EB0010B00C /* HabitWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HabitWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		132C05102D6FF6B2004828B5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		132C05122D6FF6B2004828B5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		1350646A2D70136300E53D43 /* AppIntents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppIntents.framework; path = System/Library/Frameworks/AppIntents.framework; sourceTree = SDKROOT; };
+		13B76B3A2D713A3B009842F6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		13B76B3C2D713A3B009842F6 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		13F0898D2D7194390068CCFE /* HabitWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HabitWidgetExtension.entitlements; sourceTree = "<group>"; };
 		13F80B2F2D644D87008E7947 /* HabitIQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitIQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		130B86FA2D77D3EC0010B00C /* Exceptions for "HabitWidget" folder in "HabitWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 130B86E52D77D3EB0010B00C /* HabitWidgetExtension */;
+		};
+		13A289EB2D77E43700533662 /* Exceptions for "HabitIQ" folder in "HabitWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				habit_recommendation.mlmodel,
+				HabitDataManager.swift,
+				HabitEntity.swift,
+				HabitNotificationManager.swift,
+				HabitTrackerModel.xcdatamodeld,
+				PersistenceController.swift,
+			);
+			target = 130B86E52D77D3EB0010B00C /* HabitWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		130B86E92D77D3EB0010B00C /* HabitWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				130B86FA2D77D3EC0010B00C /* Exceptions for "HabitWidget" folder in "HabitWidgetExtension" target */,
+			);
+			path = HabitWidget;
+			sourceTree = "<group>";
+		};
 		13F80B312D644D87008E7947 /* HabitIQ */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				13A289EB2D77E43700533662 /* Exceptions for "HabitIQ" folder in "HabitWidgetExtension" target */,
+			);
 			path = HabitIQ;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		130B86E32D77D3EB0010B00C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				130B86E82D77D3EB0010B00C /* SwiftUI.framework in Frameworks */,
+				130B86E72D77D3EB0010B00C /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13F80B2C2D644D87008E7947 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -34,11 +108,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		132C050F2D6FF6B2004828B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1350646A2D70136300E53D43 /* AppIntents.framework */,
+				132C05102D6FF6B2004828B5 /* WidgetKit.framework */,
+				132C05122D6FF6B2004828B5 /* SwiftUI.framework */,
+				13B76B3A2D713A3B009842F6 /* UserNotifications.framework */,
+				13B76B3C2D713A3B009842F6 /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = SOURCE_ROOT;
+			usesTabs = 0;
+		};
 		13F80B262D644D87008E7947 = {
 			isa = PBXGroup;
 			children = (
-				136646892D6D4D5F0053C187 /* HabitViewModel.swift */,
+				13F0898D2D7194390068CCFE /* HabitWidgetExtension.entitlements */,
 				13F80B312D644D87008E7947 /* HabitIQ */,
+				130B86E92D77D3EB0010B00C /* HabitWidget */,
+				132C050F2D6FF6B2004828B5 /* Frameworks */,
 				13F80B302D644D87008E7947 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				13F80B2F2D644D87008E7947 /* HabitIQ.app */,
+				130B86E62D77D3EB0010B00C /* HabitWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +144,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		130B86E52D77D3EB0010B00C /* HabitWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 130B86FB2D77D3EC0010B00C /* Build configuration list for PBXNativeTarget "HabitWidgetExtension" */;
+			buildPhases = (
+				130B86E22D77D3EB0010B00C /* Sources */,
+				130B86E32D77D3EB0010B00C /* Frameworks */,
+				130B86E42D77D3EB0010B00C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				130B86E92D77D3EB0010B00C /* HabitWidget */,
+			);
+			name = HabitWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = HabitWidgetExtension;
+			productReference = 130B86E62D77D3EB0010B00C /* HabitWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		13F80B2E2D644D87008E7947 /* HabitIQ */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13F80B422D644D88008E7947 /* Build configuration list for PBXNativeTarget "HabitIQ" */;
@@ -61,10 +173,12 @@
 				13F80B2B2D644D87008E7947 /* Sources */,
 				13F80B2C2D644D87008E7947 /* Frameworks */,
 				13F80B2D2D644D87008E7947 /* Resources */,
+				132C05292D6FF6B3004828B5 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				130B86F82D77D3EC0010B00C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				13F80B312D644D87008E7947 /* HabitIQ */,
@@ -86,6 +200,9 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					130B86E52D77D3EB0010B00C = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					13F80B2E2D644D87008E7947 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -106,11 +223,19 @@
 			projectRoot = "";
 			targets = (
 				13F80B2E2D644D87008E7947 /* HabitIQ */,
+				130B86E52D77D3EB0010B00C /* HabitWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		130B86E42D77D3EB0010B00C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13F80B2D2D644D87008E7947 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,17 +246,87 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		130B86E22D77D3EB0010B00C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13F80B2B2D644D87008E7947 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1366468A2D6D4D5F0053C187 /* HabitViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		130B86F82D77D3EC0010B00C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 130B86E52D77D3EB0010B00C /* HabitWidgetExtension */;
+			targetProxy = 130B86F72D77D3EC0010B00C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		130B86FC2D77D3EC0010B00C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = HabitWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NJW7FNLVSP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HabitWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HabitWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.doyoung.HabitIQ.HabitWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		130B86FD2D77D3EC0010B00C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = HabitWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NJW7FNLVSP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HabitWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HabitWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.doyoung.HabitIQ.HabitWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		13F80B402D644D88008E7947 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -256,17 +451,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HabitIQ/HabitIQ.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HabitIQ/Preview Content\"";
 				DEVELOPMENT_TEAM = NJW7FNLVSP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -285,17 +482,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HabitIQ/HabitIQ.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HabitIQ/Preview Content\"";
 				DEVELOPMENT_TEAM = NJW7FNLVSP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +511,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		130B86FB2D77D3EC0010B00C /* Build configuration list for PBXNativeTarget "HabitWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				130B86FC2D77D3EC0010B00C /* Debug */,
+				130B86FD2D77D3EC0010B00C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		13F80B2A2D644D87008E7947 /* Build configuration list for PBXProject "HabitIQ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
