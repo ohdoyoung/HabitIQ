@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		130B86E72D77D3EB0010B00C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132C05102D6FF6B2004828B5 /* WidgetKit.framework */; };
-		130B86E82D77D3EB0010B00C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132C05122D6FF6B2004828B5 /* SwiftUI.framework */; };
-		130B86F92D77D3EC0010B00C /* HabitWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 130B86E62D77D3EB0010B00C /* HabitWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		13CF9FBF2D78369A005C0DCF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132C05102D6FF6B2004828B5 /* WidgetKit.framework */; };
+		13CF9FC02D78369A005C0DCF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132C05122D6FF6B2004828B5 /* SwiftUI.framework */; };
+		13CF9FCF2D78369B005C0DCF /* HabitWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 13CF9FBE2D78369A005C0DCF /* HabitWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		130B86F72D77D3EC0010B00C /* PBXContainerItemProxy */ = {
+		13CF9FCD2D78369B005C0DCF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 13F80B272D644D87008E7947 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 130B86E52D77D3EB0010B00C;
+			remoteGlobalIDString = 13CF9FBD2D78369A005C0DCF;
 			remoteInfo = HabitWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
@@ -29,7 +29,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				130B86F92D77D3EC0010B00C /* HabitWidgetExtension.appex in Embed Foundation Extensions */,
+				13CF9FCF2D78369B005C0DCF /* HabitWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,25 +37,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		130B86E62D77D3EB0010B00C /* HabitWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HabitWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		132C05102D6FF6B2004828B5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		132C05122D6FF6B2004828B5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		1350646A2D70136300E53D43 /* AppIntents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppIntents.framework; path = System/Library/Frameworks/AppIntents.framework; sourceTree = SDKROOT; };
 		13B76B3A2D713A3B009842F6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		13B76B3C2D713A3B009842F6 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		13CF9FBE2D78369A005C0DCF /* HabitWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HabitWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F0898D2D7194390068CCFE /* HabitWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HabitWidgetExtension.entitlements; sourceTree = "<group>"; };
 		13F80B2F2D644D87008E7947 /* HabitIQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitIQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		130B86FA2D77D3EC0010B00C /* Exceptions for "HabitWidget" folder in "HabitWidgetExtension" target */ = {
+		13CF9FD02D78369B005C0DCF /* Exceptions for "HabitWidget" folder in "HabitWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 130B86E52D77D3EB0010B00C /* HabitWidgetExtension */;
+			target = 13CF9FBD2D78369A005C0DCF /* HabitWidgetExtension */;
 		};
-		13A289EB2D77E43700533662 /* Exceptions for "HabitIQ" folder in "HabitWidgetExtension" target */ = {
+		13CF9FD82D7836BE005C0DCF /* Exceptions for "HabitIQ" folder in "HabitWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				habit_recommendation.mlmodel,
@@ -65,15 +65,23 @@
 				HabitTrackerModel.xcdatamodeld,
 				PersistenceController.swift,
 			);
-			target = 130B86E52D77D3EB0010B00C /* HabitWidgetExtension */;
+			target = 13CF9FBD2D78369A005C0DCF /* HabitWidgetExtension */;
+		};
+		13CF9FE22D78387E005C0DCF /* Exceptions for "HabitWidget" folder in "HabitIQ" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				HabitWidget.swift,
+			);
+			target = 13F80B2E2D644D87008E7947 /* HabitIQ */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		130B86E92D77D3EB0010B00C /* HabitWidget */ = {
+		13CF9FC12D78369A005C0DCF /* HabitWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				130B86FA2D77D3EC0010B00C /* Exceptions for "HabitWidget" folder in "HabitWidgetExtension" target */,
+				13CF9FE22D78387E005C0DCF /* Exceptions for "HabitWidget" folder in "HabitIQ" target */,
+				13CF9FD02D78369B005C0DCF /* Exceptions for "HabitWidget" folder in "HabitWidgetExtension" target */,
 			);
 			path = HabitWidget;
 			sourceTree = "<group>";
@@ -81,7 +89,7 @@
 		13F80B312D644D87008E7947 /* HabitIQ */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				13A289EB2D77E43700533662 /* Exceptions for "HabitIQ" folder in "HabitWidgetExtension" target */,
+				13CF9FD82D7836BE005C0DCF /* Exceptions for "HabitIQ" folder in "HabitWidgetExtension" target */,
 			);
 			path = HabitIQ;
 			sourceTree = "<group>";
@@ -89,12 +97,12 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		130B86E32D77D3EB0010B00C /* Frameworks */ = {
+		13CF9FBB2D78369A005C0DCF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				130B86E82D77D3EB0010B00C /* SwiftUI.framework in Frameworks */,
-				130B86E72D77D3EB0010B00C /* WidgetKit.framework in Frameworks */,
+				13CF9FC02D78369A005C0DCF /* SwiftUI.framework in Frameworks */,
+				13CF9FBF2D78369A005C0DCF /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,11 +132,11 @@
 		13F80B262D644D87008E7947 = {
 			isa = PBXGroup;
 			children = (
-				13F0898D2D7194390068CCFE /* HabitWidgetExtension.entitlements */,
 				13F80B312D644D87008E7947 /* HabitIQ */,
-				130B86E92D77D3EB0010B00C /* HabitWidget */,
+				13CF9FC12D78369A005C0DCF /* HabitWidget */,
 				132C050F2D6FF6B2004828B5 /* Frameworks */,
 				13F80B302D644D87008E7947 /* Products */,
+				13F0898D2D7194390068CCFE /* HabitWidgetExtension.entitlements */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				13F80B2F2D644D87008E7947 /* HabitIQ.app */,
-				130B86E62D77D3EB0010B00C /* HabitWidgetExtension.appex */,
+				13CF9FBE2D78369A005C0DCF /* HabitWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,26 +152,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		130B86E52D77D3EB0010B00C /* HabitWidgetExtension */ = {
+		13CF9FBD2D78369A005C0DCF /* HabitWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 130B86FB2D77D3EC0010B00C /* Build configuration list for PBXNativeTarget "HabitWidgetExtension" */;
+			buildConfigurationList = 13CF9FD12D78369B005C0DCF /* Build configuration list for PBXNativeTarget "HabitWidgetExtension" */;
 			buildPhases = (
-				130B86E22D77D3EB0010B00C /* Sources */,
-				130B86E32D77D3EB0010B00C /* Frameworks */,
-				130B86E42D77D3EB0010B00C /* Resources */,
+				13CF9FBA2D78369A005C0DCF /* Sources */,
+				13CF9FBB2D78369A005C0DCF /* Frameworks */,
+				13CF9FBC2D78369A005C0DCF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				130B86E92D77D3EB0010B00C /* HabitWidget */,
+				13CF9FC12D78369A005C0DCF /* HabitWidget */,
 			);
 			name = HabitWidgetExtension;
 			packageProductDependencies = (
 			);
 			productName = HabitWidgetExtension;
-			productReference = 130B86E62D77D3EB0010B00C /* HabitWidgetExtension.appex */;
+			productReference = 13CF9FBE2D78369A005C0DCF /* HabitWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		13F80B2E2D644D87008E7947 /* HabitIQ */ = {
@@ -178,7 +186,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				130B86F82D77D3EC0010B00C /* PBXTargetDependency */,
+				13CF9FCE2D78369B005C0DCF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				13F80B312D644D87008E7947 /* HabitIQ */,
@@ -200,7 +208,7 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					130B86E52D77D3EB0010B00C = {
+					13CF9FBD2D78369A005C0DCF = {
 						CreatedOnToolsVersion = 16.2;
 					};
 					13F80B2E2D644D87008E7947 = {
@@ -223,13 +231,13 @@
 			projectRoot = "";
 			targets = (
 				13F80B2E2D644D87008E7947 /* HabitIQ */,
-				130B86E52D77D3EB0010B00C /* HabitWidgetExtension */,
+				13CF9FBD2D78369A005C0DCF /* HabitWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		130B86E42D77D3EB0010B00C /* Resources */ = {
+		13CF9FBC2D78369A005C0DCF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,7 +254,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		130B86E22D77D3EB0010B00C /* Sources */ = {
+		13CF9FBA2D78369A005C0DCF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -263,15 +271,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		130B86F82D77D3EC0010B00C /* PBXTargetDependency */ = {
+		13CF9FCE2D78369B005C0DCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 130B86E52D77D3EB0010B00C /* HabitWidgetExtension */;
-			targetProxy = 130B86F72D77D3EC0010B00C /* PBXContainerItemProxy */;
+			target = 13CF9FBD2D78369A005C0DCF /* HabitWidgetExtension */;
+			targetProxy = 13CF9FCD2D78369B005C0DCF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		130B86FC2D77D3EC0010B00C /* Debug */ = {
+		13CF9FD22D78369B005C0DCF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -299,7 +307,7 @@
 			};
 			name = Debug;
 		};
-		130B86FD2D77D3EC0010B00C /* Release */ = {
+		13CF9FD32D78369B005C0DCF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -511,11 +519,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		130B86FB2D77D3EC0010B00C /* Build configuration list for PBXNativeTarget "HabitWidgetExtension" */ = {
+		13CF9FD12D78369B005C0DCF /* Build configuration list for PBXNativeTarget "HabitWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				130B86FC2D77D3EC0010B00C /* Debug */,
-				130B86FD2D77D3EC0010B00C /* Release */,
+				13CF9FD22D78369B005C0DCF /* Debug */,
+				13CF9FD32D78369B005C0DCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

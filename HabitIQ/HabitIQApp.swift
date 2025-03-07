@@ -1,5 +1,6 @@
 import SwiftUI
 import UserNotifications
+import AppIntents
 
 @main
 struct HabitIQApp: App {
@@ -31,4 +32,7 @@ struct HabitIQApp: App {
 
         }
     }
+
+    
+   
 }

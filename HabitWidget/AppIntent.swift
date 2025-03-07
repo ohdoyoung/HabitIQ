@@ -15,4 +15,12 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
     // An example configurable parameter.
     @Parameter(title: "Favorite Emoji", default: "😃")
     var favoriteEmoji: String
+    
+//    static func toggleCompletionIntent(habitName: String, habitTime: String) -> ToggleHabitCompletionIntent {
+//            var intent = ToggleHabitCompletionIntent()
+//            intent.habitName = habitName
+//            intent.habitTime = habitTime
+//            return intent
+//        }
 }
+//

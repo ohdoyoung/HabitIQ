@@ -16,7 +16,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "130B86E52D77D3EB0010B00C"
+               BlueprintIdentifier = "13CF9FBD2D78369A005C0DCF"
                BuildableName = "HabitWidgetExtension.appex"
                BlueprintName = "HabitWidgetExtension"
                ReferencedContainer = "container:HabitIQ.xcodeproj">
@@ -62,7 +62,7 @@
          BundleIdentifier = "com.apple.springboard">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "130B86E52D77D3EB0010B00C"
+            BlueprintIdentifier = "13CF9FBD2D78369A005C0DCF"
             BuildableName = "HabitWidgetExtension.appex"
             BlueprintName = "HabitWidgetExtension"
             ReferencedContainer = "container:HabitIQ.xcodeproj">

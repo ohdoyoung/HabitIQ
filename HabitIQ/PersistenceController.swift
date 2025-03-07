@@ -29,6 +29,15 @@ class PersistenceController {
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
     var viewContext: NSManagedObjectContext {
-           return container.viewContext
+          container.viewContext
        }
+    func newBackgroundContext() -> NSManagedObjectContext {
+           let context = container.newBackgroundContext()
+           context.automaticallyMergesChangesFromParent = true // ✅ 데이터 변경 자동 반영
+           return context
+       }
+    static func ensureCoreDataIsLoaded() {
+          _ = PersistenceController.shared.container.viewContext // ✅ 강제 초기화
+          print("✅ Core Data 컨텍스트 강제 로드 완료")
+      }
 }

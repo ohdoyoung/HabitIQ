@@ -7,6 +7,7 @@
 
 import WidgetKit
 import SwiftUI
+import AppIntents
 
 @main
 struct HabitWidgetBundle: WidgetBundle {
@@ -15,4 +16,11 @@ struct HabitWidgetBundle: WidgetBundle {
         HabitWidgetControl()
         HabitWidgetLiveActivity()
     }
+    @AppShortcutsBuilder
+    static var appShortcuts: [AppShortcut] {
+           AppShortcut(
+               intent: ToggleHabitCompletionIntent(),
+               phrases: ["Toggle habit completion"]
+           )
+       }
 }

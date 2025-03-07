@@ -10,17 +10,15 @@ import SwiftUI
 import WidgetKit
 
 struct HabitWidgetControl: ControlWidget {
-    static let kind: String = "kr.doyoung.HabitIQ.HabitWidget"
-
     var body: some ControlWidgetConfiguration {
-        AppIntentControlConfiguration(
-            kind: Self.kind,
+        StaticControlConfiguration(
+            kind: "kr.doyoung.HabitIQ.HabitWidget",
             provider: Provider()
         ) { value in
             ControlWidgetToggle(
                 "Start Timer",
-                isOn: value.isRunning,
-                action: StartTimerIntent(value.name)
+                isOn: value,
+                action: StartTimerIntent()
             ) { isRunning in
                 Label(isRunning ? "On" : "Off", systemImage: "timer")
             }
@@ -31,47 +29,26 @@ struct HabitWidgetControl: ControlWidget {
 }
 
 extension HabitWidgetControl {
-    struct Value {
-        var isRunning: Bool
-        var name: String
-    }
-
-    struct Provider: AppIntentControlValueProvider {
-        func previewValue(configuration: TimerConfiguration) -> Value {
-            HabitWidgetControl.Value(isRunning: false, name: configuration.timerName)
+    struct Provider: ControlValueProvider {
+        var previewValue: Bool {
+            false
         }
 
-        func currentValue(configuration: TimerConfiguration) async throws -> Value {
+        func currentValue() async throws -> Bool {
             let isRunning = true // Check if the timer is running
-            return HabitWidgetControl.Value(isRunning: isRunning, name: configuration.timerName)
+            return isRunning
         }
     }
-}
-
-struct TimerConfiguration: ControlConfigurationIntent {
-    static let title: LocalizedStringResource = "Timer Name Configuration"
-
-    @Parameter(title: "Timer Name", default: "Timer")
-    var timerName: String
 }
 
 struct StartTimerIntent: SetValueIntent {
     static let title: LocalizedStringResource = "Start a timer"
 
-    @Parameter(title: "Timer Name")
-    var name: String
-
     @Parameter(title: "Timer is running")
     var value: Bool
 
-    init() {}
-
-    init(_ name: String) {
-        self.name = name
-    }
-
     func perform() async throws -> some IntentResult {
-        // Start the timer…
+        // Start / stop the timer based on `value`.
         return .result()
     }
 }
