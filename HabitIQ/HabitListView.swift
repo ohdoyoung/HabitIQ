@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreData
 
 struct HabitListView: View {
     @ObservedObject private var viewModel = HabitViewModel()
@@ -12,14 +13,14 @@ struct HabitListView: View {
                             .font(.system(size: 50))
                             .foregroundColor(.gray)
                             .padding(.bottom, 10)
-                        Text("저장된 습관이 없습니다.")
+                        Text("저장된 루틴이 없습니다.")
                             .font(.headline)
                             .foregroundColor(.gray)
                     }
                     .padding()
                 } else {
                     List {
-                        ForEach(viewModel.habits, id: \.objectID) { habit in
+                        ForEach(viewModel.habits, id: \..objectID) { habit in
                             HabitRowView(habit: habit) {
                                 viewModel.toggleCompletion(for: habit)
                             }
@@ -31,11 +32,12 @@ struct HabitListView: View {
                 }
             }
             .padding(.bottom, 20)
-            .onAppear { // ✅ 뷰가 나타날 때 습관 목록 갱신
+            .onAppear {
                 viewModel.fetchHabits()
+                viewModel.resetDailyCompletion() // ✅ 하루마다 달성률 초기화
             }
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name("HabitUpdated"))) { _ in
-                viewModel.fetchHabits() // ✅ 푸시 알림을 통해 습관이 완료되면 자동 반영
+                viewModel.fetchHabits()
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -51,7 +53,6 @@ struct HabitListView: View {
     }
 }
 
-
 // ✅ 개별 습관 Row 뷰
 struct HabitRowView: View {
     let habit: HabitEntity
@@ -64,7 +65,7 @@ struct HabitRowView: View {
                     .font(.headline)
                     .foregroundColor(.primary)
                 
-                Text("카테고리: \(habit.category)")
+                Text("카테고리: \(categoryToString(habit.category))")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                 
@@ -98,4 +99,19 @@ func formattedTime(_ date: Date?) -> String {
     return formatter.string(from: date)
 }
 
-
+extension HabitViewModel {
+    func resetDailyCompletion() {
+        let request: NSFetchRequest<HabitEntity> = HabitEntity.fetchRequest()
+        let context = PersistenceController.shared.container.viewContext
+        do {
+            let habits = try context.fetch(request)
+            for habit in habits {
+                habit.completion = 0
+            }
+            try context.save()
+            print("✅ 하루가 지나 달성률이 초기화되었습니다.")
+        } catch {
+            print("❌ 달성률 초기화 오류: \(error.localizedDescription)")
+        }
+    }
+}

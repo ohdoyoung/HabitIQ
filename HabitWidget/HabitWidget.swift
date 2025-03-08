@@ -53,51 +53,6 @@ struct SimpleEntry: TimelineEntry {
     let habits: [(name: String, completion: Int16, time: String)]
 }
 
-// ✅ 위젯 UI 구현
-//struct HabitWidgetEntryView: View {
-//    var entry: Provider.Entry
-//    
-//    var body: some View {
-//        VStack(alignment: .leading) {
-//            Text("📝 습관 위젯")
-//                .font(.headline)
-//                .padding(.bottom, 5)
-//            
-//            let habitsArray = Array(entry.habits.prefix(3))
-//            let enumeratedHabits = Array(habitsArray.enumerated()) // ✅ 미리 변환
-//
-//            ForEach(enumeratedHabits, id: \.offset) { index, habit in
-//                HStack {
-//                    VStack(alignment: .leading) {
-//                        Text(habit.name)
-//                            .font(.subheadline)
-//                            .bold()
-//                        Text("⏰ \(habit.time)")
-//                            .font(.caption)
-//                            .foregroundColor(.gray)
-//                    }
-//                    Spacer()
-//
-//                    let iconName = habit.completion == 1 ? "checkmark.circle.fill" : "circle"
-//                    let iconColor: Color = habit.completion == 1 ? .green : .gray
-//
-//                    Toggle(isOn: false,intent: ToggleHabitCompletionIntent(
-//                        habitName: IntentParameter(title : LocalizedStringResource(stringLiteral: habit.name))
-////                        habitTime: IntentParameter(title: LocalizedStringResource(stringLiteral: habit.time))
-//                    )) {
-//                        Image(systemName: iconName)
-//                            .foregroundColor(iconColor)
-//                    }
-//                    .buttonStyle(.plain)
-//                }
-//                .padding(.vertical, 3)
-//            }
-//            Spacer()
-//        }
-//        .padding()
-//    }
-//}
-
 struct HabitWidgetEntryView: View {
     var entry: Provider.Entry
     
@@ -134,9 +89,7 @@ struct HabitWidgetEntryView: View {
                             .foregroundColor(iconColor)
                     }
                     .buttonStyle(.plain)
-//                    .onAppear {
-//                        print("🟢 Intent로 보낼 habit.name: [\(habit.name)]") // ✅ habit.name이 nil인지 확인
-//                    }
+
                 }
                 .padding(.vertical, 3)
             }
@@ -201,37 +154,6 @@ struct ToggleHabitCompletionIntent: AppIntent {
                    return .result()
        }
     
-//    func perform() async throws -> some IntentResult {
-//        print("🚀 Intent 실행됨: \(habitName)")
-//        
-//        PersistenceController.ensureCoreDataIsLoaded()
-//        
-//        let context = PersistenceController.shared.container.newBackgroundContext() // ✅ 백그라운드 컨텍스트 사용
-//        await context.perform {
-//            let request: NSFetchRequest<HabitEntity> = HabitEntity.fetchRequest()
-//            request.predicate = NSPredicate(format: "habitName == %@", habitName)
-//            
-//            do {
-//                let results = try context.fetch(request)
-//                if let habit = results.first {
-//                    habit.completion = (habit.completion == 0) ? 1 : 0
-//                    try context.save()
-//                    
-//                    print("✅ \(habitName) 완료 상태 변경됨: \(habit.completion)")
-//                    
-//                    DispatchQueue.main.async {
-//                        WidgetCenter.shared.reloadAllTimelines() // ✅ 위젯 강제 새로고침
-//                    }
-//                } else {
-//                    print("❌ 해당 습관을 찾을 수 없습니다.")
-//                }
-//            } catch {
-//                print("⚠️ Core Data 업데이트 중 오류 발생: \(error.localizedDescription)")
-//            }
-//        }
-//        
-//        return .result()
-//    }
  
 }
 @available(iOS 17.0, *)

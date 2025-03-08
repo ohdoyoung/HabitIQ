@@ -57,6 +57,7 @@ class HabitDataManager {
         }
     }
     
+    
     func deleteHabit(_ habit: HabitEntity) {
             let habitIDString = habit.objectID.uriRepresentation().absoluteString // ✅ 해당 습관의 objectID 가져오기
 
