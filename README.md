@@ -46,5 +46,9 @@ AI를 활용한 스마트 습관 관리 앱 **HabitiQ**입니다. 🎯
 
 ## 📸 스크린샷 (예정)
 > 앱의 주요 화면 스크린샷을 추가할 예정입니다.
+![Simulator Screenshot - iPhone 16 - 2025-03-09 at 15 26 23](https://github.com/user-attachments/assets/6b4f5da8-276e-4038-b6b5-3ece0e960a75)
+![Simulator Screenshot - iPhone 16 - 2025-03-09 at 15 26 03](https://github.com/user-attachments/assets/b62f2c17-4a30-4b9c-adbb-cf04c527584d)
+![Simulator Screenshot - iPhone 16 - 2025-03-09 at 15 25 43](https://github.com/user-attachments/assets/cb9138c2-1d21-44f6-b594-b3254d90c180)
+![Simulator Screenshot - iPhone 16 - 2025-03-09 at 15 24 59](https://github.com/user-attachments/assets/29ce21b0-c9f0-4132-a16f-d60753ff97fc)
 
 ---
