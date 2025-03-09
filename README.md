@@ -40,7 +40,7 @@ AI를 활용한 스마트 습관 관리 앱 **HabitiQ**입니다. 🎯
 | **UNUserNotificationCenter** | 알림(Notification) 시스템 |
 | **Core ML** | AI 기반 습관 추천 |
 | **KNN (K-Nearest Neighbors)** | 유사 사용자 습관 추천 알고리즘 |
-| **WidgetKit** (예정) | 위젯 기능 구현 |
+| **WidgetKit** | 위젯 기능 구현 |
 
 ---
 
